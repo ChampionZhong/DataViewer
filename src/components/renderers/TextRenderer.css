@@ -1,0 +1,45 @@
+.text-renderer {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--background);
+  margin: 0.5rem 0;
+}
+
+.text-renderer.reasoning {
+  border-color: #fcd34d;
+  background: #fefce8;
+}
+
+.text-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.text-renderer.reasoning .text-header {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.text-content {
+  padding: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.9375rem;
+}
+
+.text-renderer.reasoning .text-content {
+  color: #78350f;
+  font-style: italic;
+}
+

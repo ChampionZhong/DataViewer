@@ -1,0 +1,186 @@
+.column-view {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background: var(--background);
+}
+
+.column-view-container {
+	flex: 1;
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: var(--surface);
+}
+
+.column {
+	min-width: 280px;
+	max-width: 280px;
+	border-right: 1px solid var(--border);
+	display: flex;
+	flex-direction: column;
+	background: var(--background);
+}
+
+.column:last-child {
+	border-right: none;
+}
+
+.column-content {
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.column-empty {
+	padding: 2rem;
+	text-align: center;
+	color: var(--text-secondary);
+	font-size: 0.875rem;
+}
+
+.column-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.75rem 1rem;
+	border: none;
+	border-bottom: 1px solid var(--border);
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.2s;
+	text-align: left;
+}
+
+.column-item:hover {
+	background: var(--surface-hover);
+}
+
+.column-item.selected {
+	background: var(--primary-color);
+	color: white;
+}
+
+.column-item.selected .column-item-key,
+.column-item.selected .column-item-value,
+.column-item.selected .column-item-icon {
+	color: white;
+}
+
+.column-item-main {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	flex: 1;
+	min-width: 0;
+}
+
+.column-item-icon {
+	color: var(--text-secondary);
+	margin-top: 0.125rem;
+	flex-shrink: 0;
+}
+
+.column-item-content {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.column-item-key {
+	font-weight: 600;
+	font-size: 0.9375rem;
+	color: var(--text-primary);
+	word-break: break-word;
+}
+
+.column-item-value {
+	font-size: 0.8125rem;
+	color: var(--text-secondary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: monospace;
+}
+
+.column-item-arrow {
+	color: var(--text-secondary);
+	flex-shrink: 0;
+}
+
+.column-item.selected .column-item-arrow {
+	color: white;
+}
+
+.column-view-path {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1rem;
+	background: var(--surface);
+	border-top: 1px solid var(--border);
+	border-radius: 0 0 8px 8px;
+	font-size: 0.875rem;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.path-label {
+	color: var(--text-secondary);
+	font-weight: 600;
+	flex-shrink: 0;
+}
+
+.path-segment {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: var(--text-primary);
+}
+
+.path-segment svg {
+	color: var(--text-secondary);
+}
+
+.path-segment span {
+	background: var(--surface-hover);
+	padding: 0.125rem 0.5rem;
+	border-radius: 4px;
+	font-family: monospace;
+	font-weight: 500;
+}
+
+/* 滚动条样式 */
+.column-view-container::-webkit-scrollbar,
+.column-content::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.column-view-container::-webkit-scrollbar-track,
+.column-content::-webkit-scrollbar-track {
+	background: var(--surface);
+}
+
+.column-view-container::-webkit-scrollbar-thumb,
+.column-content::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 4px;
+}
+
+.column-view-container::-webkit-scrollbar-thumb:hover,
+.column-content::-webkit-scrollbar-thumb:hover {
+	background: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+	.column {
+		min-width: 220px;
+		max-width: 220px;
+	}
+}
